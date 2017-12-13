@@ -136,10 +136,10 @@ class BanSystem extends PluginBase {
             new Permission("bansystem.command.mutelist", "Allows the player to view all the players muted from this server.", Permission::DEFAULT_OP),
             new Permission("bansystem.command.pardon", "Allows the player to allow the given player to use this server.", Permission::DEFAULT_OP),
             new Permission("bansystem.command.pardonip", "Allows the player to allow the given IP address to use this server.", Permission::DEFAULT_OP),
-            new Permission("bansystem.command.tempban", "Allows the player to temporarily prevent the given player to use this server.", Permission::DEFAULT_OP),
-            new Permission("bansystem.command.tempbanip", "Allows the player to temporarily prevent the given IP address to use this server.", Permission::DEFAULT_OP),
-            new Permission("bansystem.command.tempmute", "Allows the player to temporarily prevents the given player to send public chat message.", Permission::DEFAULT_OP),
-            new Permission("bansystem.command.tempmuteip", "Allows the player to prevents the given IP address to send public chat message.", Permission::DEFAULT_OP),
+            new Permission("bansystem.command.tban", "Allows the player to temporarily prevent the given player to use this server.", Permission::DEFAULT_OP),
+            new Permission("bansystem.command.tbanip", "Allows the player to temporarily prevent the given IP address to use this server.", Permission::DEFAULT_OP),
+            new Permission("bansystem.command.tmute", "Allows the player to temporarily prevents the given player to send public chat message.", Permission::DEFAULT_OP),
+            new Permission("bansystem.command.tmuteip", "Allows the player to prevents the given IP address to send public chat message.", Permission::DEFAULT_OP),
             new Permission("bansystem.command.unban", "Allows the player to allow the given player to use this server.", Permission::DEFAULT_OP),
             new Permission("bansystem.command.unbanip", "Allows the player to allow the given IP address to use this server.", Permission::DEFAULT_OP),
             new Permission("bansystem.command.unmute", "Allows the player to allow the given player to send public chat message.", Permission::DEFAULT_OP),
@@ -157,11 +157,11 @@ class BanSystem extends PluginBase {
     }
     
     public function onLoad() {
-        $this->getLogger()->info("VMPE-Action is now loading...");
+        $this->getLogger()->info("VMPE-Action is now loading... Please wait for completion.");
     }
     
     public function onEnable() {
-        $this->getLogger()->info("VMPE-Action is now enabled.");
+        $this->getLogger()->info("VMPE-Action is now enabled. As far as we know, there's no errors on-enable.");
         $this->initializeCommands();
         $this->initializeListeners();
         $this->initializePermissions();
@@ -170,6 +170,6 @@ class BanSystem extends PluginBase {
     }
     
     public function onDisable() {
-        $this->getLogger()->info("VMPE-Action is now disabled.");
+        $this->getLogger()->info("VMPE-Action is now disabled. Did the server stop?");
     }
 }
