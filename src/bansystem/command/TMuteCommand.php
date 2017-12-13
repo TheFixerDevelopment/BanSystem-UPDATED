@@ -41,7 +41,7 @@ class TMuteCommand extends Command {
                         $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                         $player->sendMessage(TextFormat::RED . "You have been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     } else {
-                        $muteList->addBan($args[0], $expiry->getDate(), null, $sender->getName());
+                        $muteList->addBan($args[0], null, $expiry->getDate(), $sender->getName());
                         $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     }
                 } else if (count($args) >= 3) {
