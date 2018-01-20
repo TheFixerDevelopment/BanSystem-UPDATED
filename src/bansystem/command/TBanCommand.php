@@ -27,7 +27,6 @@ class TBanCommand extends Command {
             }
             $player = $sender->getServer()->getPlayer($args[0]);
             $playerName = $args[0];
-            $senderName = $args[0];
             $banList = $sender->getServer()->getNameBans();
             try {
                 if ($banList->isBanned($args[0])) {
@@ -63,7 +62,7 @@ class TBanCommand extends Command {
                     } else {
                         $banList->addBan($args[0], $banReason, $expiry->getDate(), $sender->getName());
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::WHITE . $senderName
+                    $sender->getServer()->broadcastMessage(TextFormat::WHITE . $player
                             . TextFormat::RED . " §atemp banned\n§b $playerName \n§5Reason: " . TextFormat::AQUA . $banReason . TextFormat::RED . " §6Your ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                 }
             } catch (InvalidArgumentException $e) {
