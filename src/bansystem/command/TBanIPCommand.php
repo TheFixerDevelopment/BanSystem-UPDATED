@@ -44,7 +44,7 @@ class TBanIPCommand extends Command {
                                         . " your IP ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".", false);
                             }
                         }
-                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been IP banned! IP banned by: $sender->getName() Their ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
+                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been IP banned! IP banned by: $sender->getName() Their ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                     } else {
                         if ($player != null) {
                             $player->kick(TextFormat::RED . "You have been temporarily IP banned, IP Banned by: $sender->getName()"

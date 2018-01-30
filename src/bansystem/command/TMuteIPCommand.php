@@ -41,14 +41,14 @@ class TMuteIPCommand extends Command {
                         $muteList->addBan($ip, null, $expiry->getDate(), $sender->getName());
                         foreach ($sender->getServer()->getOnlinePlayers() as $players) {
                             if ($player->getAddress() == $ip) {
-                                $player->sendMessage(TextFormat::RED . "You have been IP muted until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                                $player->sendMessage(TextFormat::RED . "You have been IP muted. IP Muted by: $sender->getName() until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                             }
                         }
-                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been IP muted until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been IP muted. IP Muted by: $sender->getName() until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     } else {
                         $muteList->addBan($player->getAddress(), null, $expiry->getDate(), $sender->getName());
-                        $player->sendMessage(TextFormat::RED . "You have been IP muted until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP muted until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $player->sendMessage(TextFormat::RED . "You have been IP muted. IP Muted by: $sender->getName() until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP muted. IP Muted by: $sender->getName() until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     }
                 } else if (count($args) >= 3) {
                     $reason = "";
@@ -61,14 +61,14 @@ class TMuteIPCommand extends Command {
                         $muteList->addBan($ip, $reason, $expiry->getDate(), $sender->getName());
                         foreach ($sender->getServer()->getOnlinePlayers() as $players) {
                             if ($player->getAddress() == $ip) {
-                                $player->sendMessage(TextFormat::RED . "You have been IP muted for " . TextFormat::AQUA . $reason . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                                $player->sendMessage(TextFormat::RED . "You have been IP muted. IP muted by: $sender->getName() Reason - " . TextFormat::AQUA . $reason . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                             }
                         }
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $ip . TextFormat::RED . " has been IP muted for " . TextFormat::AQUA . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::RED . " $player->getName() has been IP muted. IP Muted by: $sender->getName() Reason - " . TextFormat::AQUA . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     } else {
                         $muteList->addBan($player->getAddress(), $reason, $expiry->getDate(), $sender->getName());
-                        $player->sendMessage(TextFormat::RED . "You have been IP muted for " . TextFormat::RED . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP muted until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $player->sendMessage(TextFormat::RED . "You have been IP muted! IP Muted by: $sender->getName() Reason " . TextFormat::RED . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP muted. IP Muted by: $sender->getName()  until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     }
                 }
             } catch (InvalidArgumentException $ex) {

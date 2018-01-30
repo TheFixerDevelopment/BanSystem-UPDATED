@@ -38,7 +38,7 @@ class MuteIPCommand extends Command {
                             $players->sendMessage(TextFormat::RED . "You have been IP muted by $sender->getName()");
                         }
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been muted by $sender->getName()");
+                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been muted by $sender->getName()");
                 } else {
                     if ($player != null) {
                         $muteList->addBan($player->getAddress(), null, null, $sender->getName());
@@ -62,7 +62,7 @@ class MuteIPCommand extends Command {
                             $players->sendMessage(TextFormat::RED . "You have been IP muted by $sender->getName() " . TextFormat::AQUA . $reason . TextFormat::RED . ".");
                         }
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been muted by $sender Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . ".");
+                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been muted by $sender->getName() Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . ".");
                 } else {
                     if ($player != null) {
                         $muteList->addBan($player->getAddress(), $reason, null, $sender->getName());

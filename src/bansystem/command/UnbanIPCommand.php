@@ -28,7 +28,7 @@ class UnbanIPCommand extends Command {
                 return false;
             }
             $banList->remove($args[0]);
-            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address Not showing for security reasons" . TextFormat::GREEN . " has been unbanned.");
+            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address Not showing for security reasons" . TextFormat::GREEN . " has been unbanned by $sender->getName() - The player's address belongs to $player->getName()");
         } else {
             $sender->sendMessage(Translation::translate("noPermission"));
         }

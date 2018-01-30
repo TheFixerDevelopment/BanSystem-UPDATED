@@ -38,11 +38,11 @@ class TMuteCommand extends Command {
                 if (count($args) == 2) {
                     if ($player != null) {
                         $muteList->addBan($player->getName(), null, $expiry->getDate(), $sender->getName());
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §b$sender->getName() \n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                         $player->sendMessage(TextFormat::RED . "You have been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "");
                     } else {
                         $muteList->addBan($args[0], null, $expiry->getDate(), $sender->getName());
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §b$sender->getName() \n§6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     }
                 } else if (count($args) >= 3) {
                     $reason = "";
@@ -53,11 +53,11 @@ class TMuteCommand extends Command {
                     $reason = substr($reason, 0, strlen($reason) - 1);
                     if ($player != null) {
                         $muteList->addBan($player->getName(), $reason, $expiry->getDate(), $sender->getName());
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§5Reason: " . TextFormat::AQUA . $reason . " §6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . " §6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                         $player->sendMessage(TextFormat::RED . "You have been temporarily muted from our network!\n§4Muted by: §bStaff\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . " §6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     } else {
                         $muteList->addBan($args[0], $reason, $expiry->getDate(), $sender->getName());
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §bStaff\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . " §6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " has been temporarily muted from our network!\n§4Muted by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . " §6until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                     }
                 }
             } catch (InvalidArgumentException $ex) {
