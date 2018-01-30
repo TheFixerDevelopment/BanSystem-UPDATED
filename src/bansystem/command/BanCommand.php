@@ -37,7 +37,7 @@ class BanCommand extends Command {
                 } else {
                     $banList->addBan($args[0], null, null, $sender->getName());
                 }
-                $sender->getServer()->broadcastMessage(TextFormat::GREEN . $playerName . TextFormat::RED . " §bwas banned by $sender->getName() \n§5Reason: §dNot provided.");
+                $sender->getServer()->broadcastMessage(TextFormat::GREEN . $args[0] . TextFormat::RED . " §bwas banned by $sender->getName() \n§5Reason: §dNot provided.");
             } else if (count($args) >= 2) {
                 $reason = "";
                 for ($i = 1; $i < count($args); $i++) {
