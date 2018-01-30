@@ -45,7 +45,7 @@ class TBanCommand extends Command {
                     } else {
                         $banList->addBan($args[0], null, $expiry->getDate(), $sender->getName());
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $playerName
+                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0]
                             . TextFormat::RED . " has been temporarily banned from our network\n§4Banned by: §b$sender->getName() Reason - Not provided. §6Banned until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                     
                 } else if (count($args) >= 3) {
@@ -63,7 +63,7 @@ class TBanCommand extends Command {
                         $banList->addBan($args[0], $banReason, $expiry->getDate(), $sender->getName());
                     }
                     $sender->getServer()->broadcastMessage(TextFormat::WHITE . $sender->getName()
-                            . TextFormat::RED . " §atemp banned\n§b $player->getName() \n§5Reason: " . TextFormat::AQUA . $banReason . TextFormat::RED . " §6Their ban ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                            . TextFormat::RED . " §atemp banned\n§b $args[0] \n§5Reason: " . TextFormat::AQUA . $banReason . TextFormat::RED . " §6Their ban ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                 }
             } catch (InvalidArgumentException $e) {
                 $sender->sendMessage(TextFormat::RED . $e->getMessage());

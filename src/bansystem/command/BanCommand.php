@@ -52,7 +52,7 @@ class BanCommand extends Command {
                 } else {
                     $banList->addBan($args[0], $reason, null, $sender->getName());
                 }
-                $sender->getServer()->broadcastMessage(TextFormat::AQUA . $playerName . TextFormat::RED . " §bwas banned by §c $sender->getName() \n§5Reason: "
+                $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " §bwas banned by §c $sender->getName() \n§5Reason: "
                         . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
             }
         } else {
