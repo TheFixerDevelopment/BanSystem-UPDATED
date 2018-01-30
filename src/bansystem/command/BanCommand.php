@@ -50,6 +50,7 @@ class BanCommand extends Command {
                     $banList->addBan($player->getName(), $reason, null, $sender->getName());
                     $player->kick(TextFormat::RED . "You have been suspended from our network!\n§4Banned by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
                     $playerName = $player->getName();
+                    $senderName = $sender->getName();
                 } else {
                     $banList->addBan($args[0], $reason, null, $sender->getName());
                 }
