@@ -28,7 +28,7 @@ class PardonCommand extends Command {
                 return false;
             }
             $banList->remove($args[0]);
-            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::GREEN . " has been unbanned.");
+            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::GREEN . " has been unbanned by $sender->getName()");
         } else {
             $sender->sendMessage(Translation::translate("noPermission"));
         }

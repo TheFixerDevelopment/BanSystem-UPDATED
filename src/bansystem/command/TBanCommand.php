@@ -63,7 +63,7 @@ class TBanCommand extends Command {
                         $banList->addBan($args[0], $banReason, $expiry->getDate(), $sender->getName());
                     }
                     $sender->getServer()->broadcastMessage(TextFormat::WHITE . $sender->getName()
-                            . TextFormat::RED . " §atemp banned\n§b $$args[0] \n§5Reason: " . TextFormat::AQUA . $banReason . TextFormat::RED . " §6Their ban ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
+                            . TextFormat::RED . " §atemp banned\n§b $player->getName() \n§5Reason: " . TextFormat::AQUA . $banReason . TextFormat::RED . " §6Their ban ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                 }
             } catch (InvalidArgumentException $e) {
                 $sender->sendMessage(TextFormat::RED . $e->getMessage());

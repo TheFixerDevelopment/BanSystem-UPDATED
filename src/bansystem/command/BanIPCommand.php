@@ -34,15 +34,15 @@ class BanIPCommand extends Command {
                     $banList->addBan($ip, null, null, $sender->getName());
                     foreach ($sender->getServer()->getOnlinePlayers() as $onlinePlayers) {
                         if ($onlinePlayers->getAddress() == $ip) {
-                            $onlinePlayers->kick(TextFormat::RED . "You have been IP banned from our network!\§4Banned by: §bStaff\n§4Banned by: §b$sender->getName() \n§5with no reason.", false);
+                            $onlinePlayers->kick(TextFormat::RED . "§aYou have been IP banned from our network!\n§4Banned by: §b $sender->getName() \n§5Reason - §dNot provided.", false);
                         }
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been IP banned from our network\n§4Banned by: §b$sender->getName() \n§5Reason: Not provided.\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
+                    $sender->getServer()->broadcastMessage(TextFormat::RED . "§d $sender->getName() " . TextFormat::RED . " §btemp ip banned §c $player->getName() \n§5Reason: §dNot provided.");
                 } else {
                     if ($player != null) {
                         $banList->addBan($player->getAddress(), null, null, $sender->getName());
-                        $player->kick(TextFormat::RED . "You have been IP banned from our network\n§4Banned by $sender->getName() \nReason: Not provided.\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned from our network\n§4Banned by: §b$sender->getName() \n§5Reason: Not provided.\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
+                        $player->kick(TextFormat::RED . "§aYou have been IP banned from our network\n§4Banned by §b $sender->getName() \n§5Reason: §dNot provided.\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
+                        $sender->getServer()->broadcastMessage(TextFormat::GREEN . $sender->getName() . TextFormat::RED . " §btemp ip banned §c $player->getName() \n§5Reason: §dNot provided.");
                     } else {
                         $sender->sendMessage(Translation::translate("playerNotFound"));
                     }
@@ -58,15 +58,15 @@ class BanIPCommand extends Command {
                     $sender->getServer()->getIPBans()->addBan($ip, $reason, null, $sender->getName());
                     foreach ($sender->getServer()->getOnlinePlayers() as $players) {
                         if ($players->getAddress() == $ip) {
-                            $players->kick(TextFormat::RED . "You have been IP banned from our network!\n§4Banned by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
+                            $players->kick(TextFormat::RED . "§aYou have been IP banned from our network!\n§4Banned by: §b $sender->getName() \n§5Reason: " . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
                         }
                     }
-                    $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been IP banned from our network\n§4Banned by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
+                    $sender->getServer()->broadcastMessage(TextFormat::GREEN . "$sender->getName() " . TextFormat::RED . " §btemp ip banned §c $player->getName() \n§5Reason: " . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . ".");
                 } else {
                     if ($player != null) {
                         $banList->addBan($player->getAddress(), $reason, null, $sender->getName());
-                        $player->kick(TextFormat::RED . "You have been IP banned from our network!\nBanned by: $sender->getName() §5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
-                        $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned from our network\n§4Banned by: §b$sender->getName() \n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");  
+                        $player->kick(TextFormat::RED . "§aYou have been IP banned from our network!\n§4Banned by: §b $sender->getName() §5Reason: " . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
+                        $sender->getServer()->broadcastMessage(TextFormat::GREEN . $sender->getName() . TextFormat::RED . " §btemp ip banned §c $player->getName() \n§5Reason: " . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . ".");  
                     } else {
                         $sender->sendMessage(Translation::translate("playerNotFound"));
                     }
