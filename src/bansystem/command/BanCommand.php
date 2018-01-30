@@ -38,7 +38,7 @@ class BanCommand extends Command {
                 } else {
                     $banList->addBan($args[0], null, null, $sender->getName());
                 }
-                $sender->getServer()->broadcastMessage(TextFormat::GREEN . $args[0] . TextFormat::RED . " §bwas banned by $sender->getName() \n§5Reason: §dNot provided.");
+                $sender->getServer()->broadcastMessage(TextFormat::GREEN . $args[0] . TextFormat::RED . " §bwas banned by $senderName \n§5Reason: §dNot provided.");
             } else if (count($args) >= 2) {
                 $reason = "";
                 for ($i = 1; $i < count($args); $i++) {
@@ -53,7 +53,7 @@ class BanCommand extends Command {
                 } else {
                     $banList->addBan($args[0], $reason, null, $sender->getName());
                 }
-                $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " §bwas banned by §c $sender->getName() \n§5Reason: "
+                $sender->getServer()->broadcastMessage(TextFormat::AQUA . $args[0] . TextFormat::RED . " §bwas banned by §c $senderName \n§5Reason: "
                         . TextFormat::LIGHT_PURPLE . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
             }
         } else {
