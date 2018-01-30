@@ -40,17 +40,17 @@ class TBanIPCommand extends Command {
                         $banList->addBan($ip, null, $expiry->getDate(), $sender->getName());
                         foreach ($sender->getServer()->getOnlinePlayers() as $onlinePlayers) {
                             if ($onlinePlayers->getAddress() == $ip) {
-                                $onlinePlayers->kick(TextFormat::RED . "You have been temporarily IP banned,"
+                                $onlinePlayers->kick(TextFormat::RED . "You have been temporarily IP banned. IP Banned by: $sender->getName() Reason: Not provided\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal"
                                         . " your IP ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".", false);
                             }
                         }
-                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been IP banned  until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been IP banned! IP banned by: $sender->getName() Their ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                     } else {
                         if ($player != null) {
-                            $player->kick(TextFormat::RED . "You have been temporarily IP banned,"
+                            $player->kick(TextFormat::RED . "You have been temporarily IP banned, IP Banned by: $sender->getName()"
                                         . " your IP ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".", false);
                             $banList->addBan($player->getName(), null, $expiry->getDate(), $sender->getName());
-                            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned. IP Banned by: $sender->getName() until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
                         } else {
                             $sender->sendMessage(Translation::translate("playerNotFound"));
                         }
@@ -66,17 +66,17 @@ class TBanIPCommand extends Command {
                         $banList->addBan($ip, $reason, $expiry->getDate(), $sender->getName());
                         foreach ($sender->getServer()->getOnlinePlayers() as $players) {
                             if ($players->getAddress() == $ip) {
-                                $players->kick(TextFormat::RED . "You have been temporarily IP banned for " . TextFormat::AQUA . $reason . TextFormat::RED . ","
+                                $players->kick(TextFormat::RED . "You have been temporarily IP banned. IP banned by: $sender->getName() Reason - " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal"
                                     . " your IP ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".", false);
                             }
                         }
-                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address " . TextFormat::AQUA . $ip . TextFormat::RED . " has been IP banned for " . TextFormat::AQUA . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                        $sender->getServer()->broadcastMessage(TextFormat::RED . "Address Not showing for security reasons" . TextFormat::RED . " has been IP banned. IP Banned by: $sender->getName() Reason - " . TextFormat::AQUA . $reason . TextFormat::RED . " their ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                     } else {
                         if ($player != null) {
                             $banList->addBan($player->getAddress(), $reason, $expiry->getDate(), $sender->getName());
-                            $player->kick(TextFormat::RED . "You have been temporarily IP banned for " . TextFormat::AQUA . $reason . TextFormat::RED . ","
+                            $player->kick(TextFormat::RED . "You have been temporarily IP banned. IP Banned by $sender->getName() . Reason - " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal"
                                     . " your IP ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".", false);
-                            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned for " . TextFormat::AQUA . $reason . TextFormat::RED . " until " . TextFormat::AQUA . $expiryToString . TextFormat::RED . ".");
+                            $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been IP banned. IP banned by: $sender->getName() Reason - " . TextFormat::AQUA . $reason . TextFormat::RED . " uTheir ban expires in " . TextFormat::AQUA . $expiryToString . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                         } else {
                             $sender->sendMessage(Translation::translate("playerNotFound"));
                         }

@@ -28,7 +28,7 @@ class PardonIPCommand extends Command {
                 return false;
             }
             $banList->remove($args[0]);
-            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address " . TextFormat::AQUA . $args[0] . TextFormat::GREEN . " has been unbanned.");
+            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address Not showing for security reasons" . TextFormat::GREEN . " has been unbanned.");
         } else {
             $sender->sendMessage(Translation::translate("noPermission"));
         }

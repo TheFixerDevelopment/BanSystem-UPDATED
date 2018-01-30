@@ -29,7 +29,7 @@ class UnmuteIPCommand extends Command {
                 return false;
             }
             $muteList->remove($args[0]);
-            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address " . TextFormat::AQUA . $args[0] . TextFormat::GREEN . " has been unmuted.");
+            $sender->getServer()->broadcastMessage(TextFormat::GREEN . "Address Not showing for security reasons" . TextFormat::GREEN . " has been unmuted.");
         } else {
             $sender->sendMessage(Translation::translate("noPermission"));
         }

@@ -25,8 +25,8 @@ class KickCommand extends Command {
             $player = $sender->getServer()->getPlayer($args[0]);
             if (count($args) == 1) {
                 if ($player != null) {
-                    $player->kick(TextFormat::RED . "You have been kicked from our network\§4kicked by: §bStaff\n§5with no reason.", false);
-                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been kicked from our network!\n§4Kicked by: §bStaff");
+                    $player->kick(TextFormat::RED . "You have been kicked from our network\§4kicked by: §b$sender->getName()\n§5Reason: Not provided.", false);
+                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been kicked from our network!\n§4Kicked by: §b$sender->getName()");
                 } else {
                     $sender->sendMessage(Translation::translate("playerNotFound"));
                 }
@@ -38,8 +38,8 @@ class KickCommand extends Command {
                         $reason .= " ";
                     }
                     $reason = substr($reason, 0, strlen($reason) - 1);
-                    $player->kick(TextFormat::RED . "You have been kicked from our network\n§4Kicked by: §bStaff\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . ".", false);
-                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been kicked from our network\n§4Kicked by: §bStaff\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . ".");
+                    $player->kick(TextFormat::RED . "You have been kicked from our network\n§4Kicked by: §b$sender->getName()\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal", false);
+                    $sender->getServer()->broadcastMessage(TextFormat::AQUA . $player->getName() . TextFormat::RED . " has been kicked from our network\n§4Kicked by: §b$sender->getName()\n§5Reason: " . TextFormat::AQUA . $reason . TextFormat::RED . "\n§6Did you get banned unfairly? §5Please appeal your ban! §3http://tinyurl.com/vmpebanappeal");
                 } else {
                     $sender->sendMessage(Translation::translate("playerNotFound"));
                 }
